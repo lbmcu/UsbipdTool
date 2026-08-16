@@ -1,0 +1,69 @@
+{
+  "app.title": "UsbipdTool — USBIPD WSL 串口助手",
+
+  "common.attach": "附加",
+  "common.cancel": "取消",
+  "common.yes": "是",
+  "common.no": "否",
+  "common.ok": "确定",
+  "common.refresh": "重新扫描",
+  "common.clear": "清空",
+  "common.ready": "就绪",
+  "common.scanning": "扫描中…",
+  "common.force_bind": "强制绑定",
+  "common.force_bind_tip": "勾选后绑定会追加 --force（用于 USBPcap/hrdevmon 过滤器冲突时）",
+  "common.language": "语言",
+  "common.theme": "主题",
+
+  "theme.system": "跟随系统",
+  "theme.light": "浅色",
+  "theme.dark": "深色",
+
+  "status.usbipd_ready": "usbipd {version} 已就绪",
+  "status.usbipd_detected": "usbipd 已检测到",
+  "status.admin_yes": "管理员权限：已获取",
+  "status.admin_no": "管理员权限：未获取",
+  "status.no_devices": "未发现 USB 设备",
+
+  "col.busid": "BUSID",
+  "col.vidpid": "VID:PID",
+  "col.device": "设备",
+  "col.state": "状态",
+  "col.action": "操作",
+
+  "state.not_shared": "未共享",
+  "state.shared": "已共享",
+  "state.attached": "已附加",
+
+  "btn.bind": "绑定",
+  "btn.unbind": "解绑",
+  "btn.attach": "附加",
+  "btn.detach": "分离",
+
+  "log.title": "输出日志",
+
+  "error.usbipd_not_found": "未检测到 usbipd。\n\n请先安装 usbipd-win（usbipd-win）。\n可在管理员 PowerShell 中执行：\n  winget install usbipd-win\n\n安装完成后重新打开本程序。",
+  "error.scan_failed": "扫描失败：{msg}",
+
+  "msg.bind_ok": "已绑定设备 {busid}",
+  "msg.unbind_ok": "已解绑设备 {busid}",
+  "msg.attach_ok": "已附加设备 {busid}",
+  "msg.detach_ok": "已分离设备 {busid}",
+  "msg.bind_confirm": "确定要绑定设备 {busid}（{desc}）吗？",
+  "msg.unbind_confirm": "确定要解绑设备 {busid} 吗？",
+  "msg.detach_confirm": "确定要分离设备 {busid} 吗？",
+  "msg.bind_force_hint": "绑定失败，可能因 USBPcap / hrdevmon 过滤器冲突。是否使用 --force 强制绑定重试？",
+  "msg.op_failed": "操作失败",
+  "msg.cmd_failed": "命令执行失败（code {code}）：{err}",
+
+  "attach_dialog.title": "附加设备到 WSL",
+  "attach_dialog.info": "设备 {busid}：{desc}",
+  "attach_dialog.group_wsl": "WSL 2 目标",
+  "attach_dialog.use_default": "使用默认发行版",
+  "attach_dialog.distro": "发行版",
+  "attach_dialog.default_mark": "默认",
+  "attach_dialog.auto_attach": "设备重插后自动重新附加",
+  "attach_dialog.host_ip": "主机 IP（可选）",
+  "attach_dialog.host_ip_placeholder": "留空由 usbipd 自动检测（NAT 模式）",
+  "attach_dialog.preview": "将执行：{cmd}"
+}

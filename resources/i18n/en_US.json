@@ -1,0 +1,69 @@
+{
+  "app.title": "UsbipdTool — USBIPD WSL Helper",
+
+  "common.attach": "Attach",
+  "common.cancel": "Cancel",
+  "common.yes": "Yes",
+  "common.no": "No",
+  "common.ok": "OK",
+  "common.refresh": "Rescan",
+  "common.clear": "Clear",
+  "common.ready": "Ready",
+  "common.scanning": "Scanning…",
+  "common.force_bind": "Force bind",
+  "common.force_bind_tip": "Append --force to bind (for USBPcap/hrdevmon filter conflicts)",
+  "common.language": "Language",
+  "common.theme": "Theme",
+
+  "theme.system": "System",
+  "theme.light": "Light",
+  "theme.dark": "Dark",
+
+  "status.usbipd_ready": "usbipd {version} ready",
+  "status.usbipd_detected": "usbipd detected",
+  "status.admin_yes": "Administrator: yes",
+  "status.admin_no": "Administrator: no",
+  "status.no_devices": "No USB devices found",
+
+  "col.busid": "BUSID",
+  "col.vidpid": "VID:PID",
+  "col.device": "Device",
+  "col.state": "State",
+  "col.action": "Actions",
+
+  "state.not_shared": "Not shared",
+  "state.shared": "Shared",
+  "state.attached": "Attached",
+
+  "btn.bind": "Bind",
+  "btn.unbind": "Unbind",
+  "btn.attach": "Attach",
+  "btn.detach": "Detach",
+
+  "log.title": "Log",
+
+  "error.usbipd_not_found": "usbipd was not found.\n\nPlease install usbipd-win first.\nRun in an elevated PowerShell:\n  winget install usbipd-win\n\nThen reopen this application.",
+  "error.scan_failed": "Scan failed: {msg}",
+
+  "msg.bind_ok": "Bound device {busid}",
+  "msg.unbind_ok": "Unbound device {busid}",
+  "msg.attach_ok": "Attached device {busid}",
+  "msg.detach_ok": "Detached device {busid}",
+  "msg.bind_confirm": "Bind device {busid} ({desc})?",
+  "msg.unbind_confirm": "Unbind device {busid}?",
+  "msg.detach_confirm": "Detach device {busid}?",
+  "msg.bind_force_hint": "Bind failed, possibly due to a USBPcap / hrdevmon filter conflict. Retry with --force?",
+  "msg.op_failed": "Operation failed",
+  "msg.cmd_failed": "Command failed (code {code}): {err}",
+
+  "attach_dialog.title": "Attach device to WSL",
+  "attach_dialog.info": "Device {busid}: {desc}",
+  "attach_dialog.group_wsl": "WSL 2 target",
+  "attach_dialog.use_default": "Use default distribution",
+  "attach_dialog.distro": "Distribution",
+  "attach_dialog.default_mark": "default",
+  "attach_dialog.auto_attach": "Auto re-attach when device is replugged",
+  "attach_dialog.host_ip": "Host IP (optional)",
+  "attach_dialog.host_ip_placeholder": "Leave empty for usbipd auto-detection (NAT mode)",
+  "attach_dialog.preview": "Will run: {cmd}"
+}

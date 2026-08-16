@@ -1,0 +1,58 @@
+name: Build & Release EXE
+
+# 触发时机：
+# 1. pull_request —— 提交/更新 PR 时构建 EXE，并上传为可下载产物（用于校验 PR 能否成功打包）
+# 2. push tags v* —— 推送 tag（如 v1.0.0）时构建 EXE，并创建 GitHub Release
+# 3. workflow_dispatch —— 在 Actions 页面手动触发构建
+on:
+  pull_request:
+    branches: [main, master]
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build Windows EXE
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      # 说明：spec 里引用了 resources/icon.ico，请确保该文件已提交到仓库（本地已存在）。
+      - name: Build EXE with PyInstaller
+        run: python -m PyInstaller UsbipdTool.spec --noconfirm --clean
+
+      - name: Upload EXE as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: UsbipdTool-windows
+          path: dist/UsbipdTool.exe
+          if-no-files-found: error
+
+      # 仅打 tag 时创建 Release，并把 EXE 挂上去
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/UsbipdTool.exe
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

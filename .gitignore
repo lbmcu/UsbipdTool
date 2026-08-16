@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build outputs (PyInstaller)
+build/
+dist/
+
+# Local scratch
+.tmp/
+build_tmp/
+pylibs/
+
+# IDE / OS
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
